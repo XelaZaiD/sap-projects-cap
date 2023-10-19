@@ -1,0 +1,12 @@
+.centered-button {
+display: flex;
+justify-content: center;
+}
+
+.wide-button {
+width: 100%;
+}
+
+.my-sort-icon {
+font-size: 12px;
+}

@@ -1,0 +1,30 @@
+### Create Product
+
+POST http://127.0.0.1:4004/odata/v4/list/Users
+Content-Type: application/json
+
+{"name": "Alex", "lastname": "Diaz", "age": "28", "phone": "04122727178", "email": "alex.diaz@sybven.com"}
+### Create Product
+
+POST http://127.0.0.1:4004/odata/v4/list/Users
+Content-Type: application/json
+
+{"name": "Manuel", "lastname": "Perez", "age": "25", "phone": "04142723571", "email": "manuel.perez@sybven.com"}
+### Create Product
+
+POST http://127.0.0.1:4004/odata/v4/list/Users
+Content-Type: application/json
+
+{"name": "Camila", "lastname": "Villalba", "age": "30", "phone": "04128889958", "email": "camila.villalba@sybven.com"}
+### Create Product
+
+POST http://127.0.0.1:4004/odata/v4/list/Users
+Content-Type: application/json
+
+{"name": "Jose", "lastname": "Ramirez", "age": "27", "phone": "04127821364", "email": "jose.ramirez@sybven.com"}
+### Create Product
+
+POST http://127.0.0.1:4004/odata/v4/list/Users
+Content-Type: application/json
+
+{"name": "Maria", "lastname": "Canabal", "age": "24", "phone": "04125558877", "email": "maria.canabal@sybven.com"}

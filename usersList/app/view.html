@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulario</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="./Styles/style.css">
+</head>
+<body>
+  <div class="container">
+    <hr>
+    <h1>Formulario</h1>
+    <p style="color: lightgray;">En este apartado puedes digitar los datos necesarios para crear un nuevo usuario.</p>
+    <hr>
+    <form>
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre">
+      </div>
+      <div class="form-group">
+        <label for="apellido">Apellido:</label>
+        <input type="text" class="form-control" id="lastname" placeholder="Ingrese su apellido">
+      </div>
+      <div class="form-group">
+        <label for="edad">Edad:</label>
+        <input type="number" class="form-control" id="age" placeholder="Ingrese su edad">
+      </div>
+      <div class="form-group">
+        <label for="correo">Correo Electrónico:</label>
+        <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico">
+      </div>
+      <div class="form-group">
+        <label for="telefono">Número Telefónico:</label>
+        <input type="tel" class="form-control" id="phone" placeholder="Ingrese su número telefónico">
+      </div>
+      <!-- <button type="submit" class="btn btn-primary">Enviar</button> -->
+      <div class="centered-button">
+        <button id="btnSend" type="button" class="btn btn-primary wide-button">Enviar</button>
+      </div>
+    </form>
+    <br> <hr><hr> <br>
+    <h2>Usuarios</h2>
+    <p style="color: lightgray;">En este apartado puedes visualizar el listado de usuarios existentes, editar y eliminar.</p>
+    <div class="container">
+      <div class="row justify-content-end">
+        <div class="col-auto">
+          <form class="form-inline">
+            <div class="input-group">
+              <input type="text" id="search" class="form-control" placeholder="Buscar">
+              <!-- <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button">
+                  <i class="fa fa-search"></i>
+                </button>
+              </div> -->
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th id="th-name">Nombre <i class="fa fa-sort my-sort-icon"></i></th>
+          <th id="th-lastname">Apellido <i class="fa fa-sort my-sort-icon"></i></th>
+          <th id="th-age">Edad <i class="fa fa-sort my-sort-icon"></i></th>
+          <th>Correo Electrónico</th>
+          <th>Teléfono</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody class="body-table">
+        <!-- template-table  -->
+      </tbody>
+    </table>
+    <br> <hr><hr> <br>
+  </div>      
+  <template id="template-table">
+    <tr>
+    <td class="position">1</td>
+    <td class="name">John</td>
+    <td class="lastname">Doe</td>
+    <td class="age">30</td>
+    <td class="email">johndoe@example.com</td>
+    <td class="phone">1234567890</td>
+    <td>
+        <a href="#" class="btnEdit" title="Editar" data-toggle="modal" data-target="#Modal"><i class="material-icons" style="color: #FFC107">&#xE254;</i></a>
+        <a href="#" class="btnDelete" title="Eliminar" data-toggle="tooltip"><i class="material-icons" style="color: #E34724">&#xE872;</i></a>
+    </td>
+    </tr>
+  </template>
+
+<!-- Modal -->
+<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="TitleModal">Editar Usuario</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <input type="hidden" class="form-control" id="modal-userID" >
+            <form id="Item" >
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="modal-name" >
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" class="form-control" id="modal-lastname" >
+                </div>
+                <div class="form-group">
+                    <label for="edad">Edad:</label>
+                    <input type="number" class="form-control" id="modal-age">
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" class="form-control" id="modal-email">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Número Telefónico:</label>
+                    <input type="tel" class="form-control" id="modal-phone">
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnCloseModal">Cerrar</button>
+            <button type="button" class="btn btn-primary" onclick="editUser()" id="btnSaveModal">Guardar</button>
+        </div>
+        </div>
+    </div>
+    </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="./Controllers/viewController.js"></script>
+</body>
+</html>
